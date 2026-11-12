@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGuard | Website Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>🛡️ WebGuard</h2>
+        <p class="menu-title">MENU UTAMA</p>
+        <a href="#dashboard" class="active">▦ Dashboard</a>
+        <a href="#checker">◎ Website Checker</a>
+        <a href="#history">◷ Riwayat Pemeriksaan</a>
+        <div class="sidebar-bottom">Website Monitoring System</div>
+    </aside>
+
+    <main class="main" id="dashboard">
+        <header>
+            <div>
+                <h1>Dashboard</h1>
+                <p>Selamat datang di WebGuard Monitoring System.</p>
+            </div>
+            <span class="online-label">● SYSTEM READY</span>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card">
+                <span>Total Pemeriksaan</span>
+                <h2 id="total">0</h2>
+            </div>
+            <div class="stat-card">
+                <span>Website Online</span>
+                <h2 id="online">0</h2>
+            </div>
+            <div class="stat-card">
+                <span>Website Bermasalah</span>
+                <h2 id="problem">0</h2>
+            </div>
+        </section>
+
+        <section class="panel" id="checker">
+            <h2>Website Checker</h2>
+            <p>Masukkan alamat website yang ingin diperiksa.</p>
+
+            <form id="checkForm">
+                <input
+                    type="text"
+                    id="website"
+                    placeholder="Contoh: https://google.com"
+                    required
+                >
+                <button type="submit" id="checkButton">
+                    Periksa Website
+                </button>
+            </form>
+
+            <div id="result" class="result hidden"></div>
+            <p class="notice">
+                Pemeriksaan menggunakan layanan proxy publik.
+                Hasil dan waktu respons dapat dipengaruhi layanan tersebut.
+            </p>
+        </section>
+
+        <section class="panel" id="history">
+            <div class="history-heading">
+                <div>
+                    <h2>Riwayat Pemeriksaan</h2>
+                    <p>Daftar pemeriksaan yang tersimpan di browser ini.</p>
+                </div>
+                <button class="clear-button" id="clearHistory">
+                    Hapus Riwayat
+                </button>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Website</th>
+                            <th>Status</th>
+                            <th>HTTP Code</th>
+                            <th>Waktu</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyList">
+                        <tr>
+                            <td colspan="4" class="empty">
+                                Belum ada pemeriksaan.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>© 2026 WebGuard. Website Monitoring System.</footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
